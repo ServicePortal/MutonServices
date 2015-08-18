@@ -1,0 +1,42 @@
+# Database settings.
+database:
+   driver: oracle.jdbc.driver.OracleDriver
+   username: MUBASHER_OMS
+   password: password
+   url: ../Muton_User_Management/objectdb/db/user.odb
+   minConnections: 1
+   maxConnections: 10
+
+server:
+  rootPath: /user/*
+  applicationContextPath: /muton-service
+  adminContextPath: /admin/
+#  softNofileLimit: 1000
+#  hardNofileLimit: 1000
+  applicationConnectors:
+    - type: http
+      bindHost: 0.0.0.0
+      port: 8090
+    #- type: https
+    #  port: 8443
+    #  keyStorePath: example.keystore
+    #  keyStorePassword: example
+    #  validateCerts: false
+# this requires the alpn-boot library on the JVM's boot classpath
+#    - type: spdy3
+#      port: 8445
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+#      validateCerts: false
+  adminConnectors:
+    - type: http
+      port: 8091
+#    - type: https
+#      port: 8444
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+#      validateCerts: false
+
+documentation:
+  resourcePackage: com.muton.micro.resources
+
